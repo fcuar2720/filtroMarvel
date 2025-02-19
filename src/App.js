@@ -1,7 +1,20 @@
 import logo from './logo.svg';
+import {useState, useEffect} from "react";
 import './App.css';
+import { getCharacters } from './api/ApiGeneral';
 
 function App() {
+
+const [a,setA]=useState();
+
+  useEffect(()=>{
+    getCharacters({limit:50,nameStartsWith:"h",setResponse:setA})
+  },[]);
+  
+  useEffect(()=>{
+      console.log(a);
+  },[a]);
+
   return (
     <div className="App">
       <header className="App-header">
