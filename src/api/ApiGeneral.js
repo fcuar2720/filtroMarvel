@@ -4,7 +4,12 @@ const hash="2d046337859f156e140920b780f9ae65";
 
 
 export const getCharacters=({limit,nameStartsWith,setResponse})=>{
-    fetch("http://gateway.marvel.com/v1/public/characters?limit="+limit+"&nameStartsWith="+nameStartsWith+"&ts="+ts+"&apikey="+apikey+"&hash="+hash)
+    let nameFilter
+    if(nameStartsWith){
+        nameFilter="&nameStartsWith="+nameStartsWith;
+    }
+
+    fetch("http://gateway.marvel.com/v1/public/characters?limit="+limit+"&ts="+ts+"&apikey="+apikey+"&hash="+hash+ ""+ (nameFilter?nameFilter:""))
     .then(response=>response.json())
     .then(respJson=>{
         setResponse(respJson.data);
