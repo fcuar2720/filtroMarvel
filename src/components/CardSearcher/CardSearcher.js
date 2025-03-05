@@ -8,9 +8,11 @@ const CardSearcher = props => {
     const [char, setChar] = useState();
 
     useEffect(() => {
-        getCharacterDetail({ id, setResponse: setChar });
-    }, []);
-    console.log('__char', char);
+        if (id) {
+            getCharacterDetail({ id, setResponse: setChar });
+        }
+    }, [id]);
+
     return (char ? <CardFiltered data={char.results[0]} /> : null);
 };
 

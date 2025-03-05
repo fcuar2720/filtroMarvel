@@ -29,7 +29,6 @@ const ImgDetailsChar = () => {
         }
     }, [dataChar.id]);
 
-    console.log('__comics', comics);
     return (
         <div className='img_details_char'>
             <div className='img_details_char--details'>
