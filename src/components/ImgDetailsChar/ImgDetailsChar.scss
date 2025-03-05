@@ -1,0 +1,85 @@
+.img_details_char {
+
+    &--details {
+        border-top: 1px solid #333333;
+        color: white;
+        display: flex;
+
+        @media (max-width: 750px) {
+            display: block;
+        }
+
+        background-color: #000000;
+        justify-content: center;
+        clip-path: polygon(0 0,
+            100% 0,
+            100% calc(100% - 24px),
+            calc(100% - 24px) 100%,
+            0 100%);
+
+        &--img {
+            width: 320px;
+            height: 320px;
+
+            @media (max-width: 750px) {
+                width: auto;
+                height: auto;
+            }
+        }
+
+        &--info {
+            max-width: 640px;
+            margin-left: 48px;
+
+            @media (max-width: 750px) {
+                margin-left: 16px;
+            }
+
+            &--name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 96px;
+
+                &--text {
+                    font-size: 40px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+
+    &--comics {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        &--text {
+            margin-top: 48px;
+            margin-bottom: 24px;
+            font-size: 38px;
+        }
+
+        &--carrusel {
+            display: flex;
+            overflow-x: auto;
+        }
+    }
+}
+
+.img_details_char--comics--carrusel::-webkit-scrollbar {
+    height: 4px;
+}
+
+.img_details_char--comics--carrusel::-webkit-scrollbar-thumb {
+    background: #EC1D24;
+    border-radius: 10px;
+}
+
+.img_details_char--comics--carrusel::-webkit-scrollbar-track {
+    background: transparent;
+}

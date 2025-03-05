@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import "./SearchInput.scss";
 
 const SearchInput = (props) => {
-    const {className,onChange,value}=props;
+    const { className, onChange, value } = props;
 
     return (
-        <div className="search_input">
-            <img className='search_input--img' src={Lens}/>
-            <input className='search_input--input' placeholder='SEARCH A CHARACTER...' 
+        <div className={"search_input " + className}>
+            <img className='search_input--img' src={Lens} />
+            <input className='search_input--input' placeholder='SEARCH A CHARACTER...'
                 value={value}
-                onChange={e=>{
+                onChange={e => {
                     onChange(e.target.value)
-                }} 
+                }}
             />
-            
+
         </div>
     );
 };
